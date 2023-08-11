@@ -1,0 +1,32 @@
+Data Source=(LocalDb)\MSSQLLocalDB;Integrated Security=True
+
+Data Source=(LocalDb)\MSSQLLocalDB;Integrated Security=True
+
+Scaffold-DbContext "server=(localdb)\MSSQLLocalDB;database=employeeManagementDB;integrated security=true" -Provider Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models\EF -Force
+
+
+
+create database employeeManagementDB;
+
+use employeeManagementDB;
+
+create table employeeDetails
+(
+	empNo int primary key,
+	empName varchar(20),
+	empDesignation varchar(20),
+	empSalary int,
+	empIsPermenant bit
+)
+
+insert into employeeDetails values(101,'Sumit','Sales',5000,1)
+insert into employeeDetails values(102,'Manpreet','HR',15000,1)
+insert into employeeDetails values(103,'Sakshi','Sales',53000,0)
+insert into employeeDetails values(104,'Harmeet','Sales',13000,1)
+insert into employeeDetails values(105,'Sujoy','HR',2500,1)
+insert into employeeDetails values(106,'Aman','Sales',1200,0)
+insert into employeeDetails values(107,'Karan','Accounts',7800,1)
+
+
+---------Powershell command-----------
+Scaffold-DbContext "server=(localdb)\MSSQLLocalDB;database=employeeManagementDB;integrated security=true;trust server certificate=true" -Provider Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models\EF

@@ -1,0 +1,14 @@
+make a call to products by id
+    take a text box, where use will enter product id (or u can also take a drop down, with values from 1 to 20)
+    user will enter the nubmer, click the button and get the data from 
+    https://fakestoreapi.com/products/1
+    and display the data, it also has an image, display the image in a image tag
+    use a div
+    <div>
+    <h3> Title -(Id) </h3>
+    <p> description </p>
+    <h6> category </h6>
+    img - image
+    <h6>Ratings - rate </h6>
+    <h6>Total votes : count </h6>
+   </div>

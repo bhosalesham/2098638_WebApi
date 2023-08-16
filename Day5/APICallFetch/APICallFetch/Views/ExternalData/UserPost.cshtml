@@ -1,0 +1,42 @@
+﻿<h1>UserPost</h1>
+<button class="btn btn-primary" onclick="getPostData()">Show Post</button>
+<table class="table table-bordered"></table>
+
+<script>
+    function getPostData() {
+        var url = "https://jsonplaceholder.typicode.com/users";//"https://jsonplaceholder.typicode.com/posts";
+        fetch(url).then(responseDataType => responseDataType.json())
+            .then(result => {
+                //alert('Data recived');
+                //console.log(result);
+
+                //for (var i = 0; i < result.length; i++) {
+                //    $("table").append("<tr>" +
+                //        "<td>" + result[i].userId + "</td>" +
+                //        "<td>" + result[i].id + "</td>" +
+                //        "<td>" + result[i].title + "</td>" +
+                //        "<td>" + result[i].body + "</td> </tr>"
+
+                //    )
+                //}
+
+                for (var i = 0; i < result.length; i++) {
+                    $("table").append("<tr>" +
+                        "<td>" + result[i].name + "</td>" +
+                        "<td>" + result[i].username + "</td>" +
+                        "<td>" + result[i].email + "</td>" +
+                        "<td>" + result[i].address.city + "</td>" +
+                        "<td>" + result[i].address.geo.lat + "</td> </tr>" +
+                        "<td>" + result[i].address.geo.lng + "</td> </tr>" +
+                        "<td>" + result[i].company.catchPhrase + "</td> </tr>"
+
+                    )
+                }
+            })
+            .catch(error => {
+                alert('Error');
+                console.log(error);
+            })
+    }
+</script>
+
